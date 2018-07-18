@@ -1,0 +1,11 @@
+                                                        Table "public.page"
+   Column   |           Type           |                     Modifiers                     | Storage  | Stats target | Description
+------------+--------------------------+---------------------------------------------------+----------+--------------+-------------
+ id         | integer                  | not null default nextval('page_id_seq'::regclass) | plain    |              |
+ created_at | timestamp with time zone |                                                   | plain    |              |
+ updated_at | timestamp with time zone |                                                   | plain    |              |
+ uri        | text                     |                                                   | extended |              |
+ enabled    | boolean                  |                                                   | plain    |              |
+Indexes:
+    "page_pkey" PRIMARY KEY, btree (id)
+    "page_uri_unique" UNIQUE CONSTRAINT, btree (uri)

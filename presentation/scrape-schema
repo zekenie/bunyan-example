@@ -1,0 +1,12 @@
+                                                        Table "public.scrape"
+   Column   |           Type           |                      Modifiers                      | Storage  | Stats target | Description
+------------+--------------------------+-----------------------------------------------------+----------+--------------+-------------
+ id         | integer                  | not null default nextval('scrape_id_seq'::regclass) | plain    |              |
+ created_at | timestamp with time zone |                                                     | plain    |              |
+ updated_at | timestamp with time zone |                                                     | plain    |              |
+ page_id    | integer                  |                                                     | plain    |              |
+ html       | text                     |                                                     | extended |              |
+ screenshot | bytea                    |                                                     | extended |              |
+ hash       | character varying(255)   |                                                     | extended |              |
+Indexes:
+    "scrape_pkey" PRIMARY KEY, btree (id)
