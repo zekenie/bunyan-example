@@ -48,3 +48,7 @@ $ yarn worker # runs a single pass through pages to scrape
 └───────────────────┘░              └─────────────────────┘░
  ░░░░░░░░░░░░░░░░░░░░░               ░░░░░░░░░░░░░░░░░░░░░░░
 ```
+
+## Logging Resources
+
+[This](http://www.masterzen.fr/2013/01/13/the-10-commandments-of-logging/) article is good
