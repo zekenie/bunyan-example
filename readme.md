@@ -51,4 +51,4 @@ $ yarn worker # runs a single pass through pages to scrape
 
 ## Logging Resources
 
-[This](http://www.masterzen.fr/2013/01/13/the-10-commandments-of-logging/) article is good
+[This](http://www.masterzen.fr/2013/01/13/the-10-commandments-of-logging/) article is good. I also wrote [an article](https://medium.com/fraight/hindsight-contextual-logging-at-fraight-fc6c6db0f0e0) about how we use bunyan at [Fraight](https://fraight.com).
