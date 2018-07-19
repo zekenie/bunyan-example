@@ -4,8 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "node processes/web",
-    "worker": "node processes/worker"
+    "start": "node processes/web | yarn bunyan",
+    "worker": "node processes/worker | yarn bunyan"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
