@@ -1,4 +1,5 @@
 require("dotenv").config();
+const log = require("../log");
 
 const { Pages, Scrapes } = require("../data");
 const makeScraper = require("../scrape");
@@ -10,14 +11,15 @@ async function main() {
     const pageAPI = await scraper(page.uri);
     const { html, hash } = await pageAPI.html();
     const screenshot = await pageAPI.screenshot();
-    console.log(
-      "html",
-      html.slice(0, 40),
-      " {...} ",
-      html.slice(html.length - 40)
-    );
-    console.log("hash", hash);
-    console.log("screenshot", screenshot);
+    log.debug({ url: page.url, hash, binarySize: screenshot.length }, "scrape");
+    // console.log(
+    //   "html",
+    //   html.slice(0, 40),
+    //   " {...} ",
+    //   html.slice(html.length - 40)
+    // );
+    // console.log("hash", hash);
+    // console.log("screenshot", screenshot);
     await Scrapes.create({
       page_id: page.id,
       html,
@@ -26,14 +28,15 @@ async function main() {
     });
     await pageAPI.close();
   }
+  return pages.length;
 }
 
 main()
-  .then(() => {
-    console.log("done");
+  .then(numPages => {
+    log.info({ numPages }, "done with scraping");
     process.exit(0);
   })
   .catch(err => {
-    console.error(err);
+    log.error({ err }, "scraper error");
     process.exit(1);
   });
